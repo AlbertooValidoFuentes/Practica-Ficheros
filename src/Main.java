@@ -38,7 +38,12 @@ public class Main {
                     System.out.println(f18);
                     break;
                 case "2":
-                    break;
+                    if (f18.getInitialized()) {
+                        f18.toggleFlaps();
+                        System.out.println(f18);
+                    } else {
+                        System.out.println("F18 no inicializado");
+                    }
                 case "3":
                     break;
                 case "4":
