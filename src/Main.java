@@ -67,10 +67,11 @@ public class Main {
                         System.out.println(f18);
                     } else {
                         System.out.println("Sistema de eyeccion no armando");
-                        break;
                     }
-                case "Q":
                     break;
+                case "Q":
+                    System.out.println("Saliendo...");
+                    salir = true;
             }
 
         }
