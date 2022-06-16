@@ -52,16 +52,32 @@ public class Plane implements Serializable {
         return ejectionSystem;
     }
 
+    public String statusFlaps() {
+        return flaps ? "Arriba" : "Abajo";
+    }
+
+    public String statusLandingGear() {
+        return landingGear ? "Arriba" : "Abajo";
+    }
+
+    public String statusEjectionSystem() {
+        return ejectionSystem ? "Armado" : "Desarmado";
+    }
+
+    public String statusSeatOccupation() {
+        return seatOccupation ? "Verdadero" : "Falso";
+    }
+
     @Override
     public String toString() {
-        return "Plane{" +
-                "fuelLevel=" + fuelLevel +
-                ", pilotCallSign='" + pilotCallSign + '\'' +
-                ", squadNumber='" + squadNumber + '\'' +
-                ", flaps=" + flaps +
-                ", landingGear=" + landingGear +
-                ", ejectionSystem=" + ejectionSystem +
-                ", seatOccupation=" + seatOccupation +
+        return "Plane{" + "\n" +
+                "- fuelLevel=" + fuelLevel + "\n" +
+                "- pilotCallSign=' " + pilotCallSign + '\'' + "\n" +
+                "- squadNumber=' " + squadNumber + '\'' + "\n" +
+                "- flaps= " + statusFlaps() + "\n" +
+                "- landingGear= " + statusLandingGear() + "\n" +
+                "- ejectionSystem= " + statusEjectionSystem() + "\n" +
+                "- seatOccupation= " + statusSeatOccupation() + "\n" +
                 '}';
     }
 }
