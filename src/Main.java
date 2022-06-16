@@ -44,6 +44,7 @@ public class Main {
                     } else {
                         System.out.println("F18 no inicializado");
                     }
+                    break;
                 case "3":
                     if (f18.getInitialized()) {
                         f18.toggleLandingGear();
@@ -51,6 +52,7 @@ public class Main {
                     } else {
                         System.out.println("F18 no inicializado");
                     }
+                    break;
                 case "4":
                     if (f18.getInitialized()) {
                         f18.ejectionSystem();
@@ -58,8 +60,15 @@ public class Main {
                     } else {
                         System.out.println("F18 no inicializado");
                     }
-                case "5":
                     break;
+                case "5":
+                    if (f18.getEjectionSystem()) {
+                        f18.setSeatOccupation(false);
+                        System.out.println(f18);
+                    } else {
+                        System.out.println("Sistema de eyeccion no armando");
+                        break;
+                    }
                 case "Q":
                     break;
             }
