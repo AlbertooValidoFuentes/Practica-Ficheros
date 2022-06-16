@@ -33,7 +33,7 @@ public class Main {
         } catch (FileNotFoundException ex) {
             System.out.println("No se ha encontrado un archivo con datos ");
         } catch (IOException e) {
-            System.out.println("Se ha producido un error en la E/S");
+            System.out.println("Se ha producido un error en la entrada o salida");
         }
 
 
