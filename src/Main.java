@@ -22,19 +22,18 @@ public class Main {
 
                 f18 = (Plane) objectInput.readObject();
 
-                System.out.println("SUCCESS: Se ha cargado el archivo guardado correctamente.");
+                System.out.println("Se ha cargado el archivo guardado correctamente.");
 
             } catch (IOException e) {
-                System.out.println("ERROR: Se ha producido un error en la E/S");
+                System.out.println("Se ha producido un error en la E/S");
             } catch (ClassNotFoundException e) {
-                System.out.println("ERROR: Se ha producido un error intentando leer la información");
+                System.out.println("Se ha producido un error intentando leer la información");
             }
 
         } catch (FileNotFoundException ex) {
-            System.out.println("WARNING: No se ha encontrado un archivo con datos " +
-                    "guardados, se creará uno al cerrar por voluntad la sesion");
+            System.out.println("No se ha encontrado un archivo con datos ");
         } catch (IOException e) {
-            System.out.println("ERROR: Se ha producido un error en la E/S");
+            System.out.println("Se ha producido un error en la E/S");
         }
 
 
@@ -119,16 +118,16 @@ public class Main {
                         objectOutput.writeObject(f18);
 
                     } catch (FileNotFoundException e) {
-                        System.out.println("ERROR: La ruta marcada no existe");
+                        System.out.println("La ruta marcada no existe");
                     } catch (IOException e) {
-                        System.out.println("ERROR: Se ha producido un error en la E/S");
+                        System.out.println("Se ha producido un error en la entrada o salida");
                     } finally {
                         try  {
                             if (objectOutput != null) objectOutput.close();
                             if (bufferedOutput != null) objectOutput.close();
                             if (outputFile != null) objectOutput.close();
                         } catch (IOException e) {
-                            System.out.println("ERROR: No se ha podido cerrar el archivo");
+                            System.out.println("No se ha podido cerrar el archivo");
                         }
                     }
 
