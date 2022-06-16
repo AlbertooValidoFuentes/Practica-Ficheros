@@ -6,6 +6,8 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         boolean salir = false;
 
+        Plane f18 = new Plane(0, "", "");
+
         while (!salir) {
 
             System.out.println("1. Inicializar F18. ");
@@ -29,14 +31,14 @@ public class Main {
                     System.out.println("Ingrese el numero de escuadron: ");
                     String numeroEscuadron = scan.nextLine();
 
-                    Plane f18 = new Plane(nivelCombustible, apodoPiloto, numeroEscuadron);
+                    f18 = new Plane(nivelCombustible, apodoPiloto, numeroEscuadron);
 
                     f18.setInitialized(true);
 
                     System.out.println(f18);
                     break;
                 case "2":
-
+                    break;
                 case "3":
                     break;
                 case "4":
