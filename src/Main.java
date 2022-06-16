@@ -19,13 +19,10 @@ public class Main {
             objectInput = new ObjectInputStream(bufferedInput);
 
             try {
-
                 f18 = (Plane) objectInput.readObject();
-
-                System.out.println("Se ha cargado el archivo guardado correctamente.");
-
+                System.out.println("Se ha cargado el archivo guardado correctamente!!.");
             } catch (IOException e) {
-                System.out.println("Se ha producido un error en la E/S");
+                System.out.println("Se ha producido un error en la entrada o salida");
             } catch (ClassNotFoundException e) {
                 System.out.println("Se ha producido un error intentando leer la información");
             }
@@ -130,7 +127,6 @@ public class Main {
                             System.out.println("No se ha podido cerrar el archivo");
                         }
                     }
-
                     System.out.println("Saliendo...");
                     salir = true;
                     break;
