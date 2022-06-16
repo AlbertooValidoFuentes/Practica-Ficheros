@@ -46,6 +46,10 @@ public class Plane {
         return initialized;
     }
 
+    public boolean getEjectionSystem() {
+        return ejectionSystem;
+    }
+
     @Override
     public String toString() {
         return "Plane{" +
