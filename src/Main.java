@@ -25,7 +25,7 @@ public class Main {
                 System.out.println("Se ha cargado el archivo guardado correctamente.");
 
             } catch (IOException e) {
-                System.out.println("Se ha producido un error en la E/S");
+                System.out.println("Se ha producido un error en la entrada o salida");
             } catch (ClassNotFoundException e) {
                 System.out.println("Se ha producido un error intentando leer la información");
             }
