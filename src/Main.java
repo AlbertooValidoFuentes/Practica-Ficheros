@@ -1,12 +1,50 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException{
+
+        final String PATH = "data/plane.dat";
+
+        FileInputStream inputStream;
+        BufferedInputStream bufferedInput;
+        ObjectInputStream objectInput;
+
+        Plane f18 = new Plane(0, "", "");
+
+        try {
+
+            inputStream = new FileInputStream(PATH);
+            bufferedInput = new BufferedInputStream(inputStream);
+            objectInput = new ObjectInputStream(bufferedInput);
+
+            try {
+
+                f18 = (Plane) objectInput.readObject();
+
+                System.out.println("SUCCESS: Se ha cargado el archivo guardado correctamente.");
+
+            } catch (IOException e) {
+                System.out.println("ERROR: Se ha producido un error en la E/S");
+            } catch (ClassNotFoundException e) {
+                System.out.println("ERROR: Se ha producido un error intentando leer la información");
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("WARNING: No se ha encontrado un archivo con datos " +
+                    "guardados, se creará uno al cerrar por voluntad la sesion");
+        } catch (IOException e) {
+            System.out.println("ERROR: Se ha producido un error en la E/S");
+        }
+
+
+        FileOutputStream outputFile = null;
+        BufferedOutputStream bufferedOutput = null;
+        ObjectOutputStream objectOutput = null;
+
 
         Scanner scan = new Scanner(System.in);
         boolean salir = false;
-
-        Plane f18 = new Plane(0, "", "");
 
         while (!salir) {
 
@@ -70,13 +108,34 @@ public class Main {
                     }
                     break;
                 case "Q":
+                case "q":
+
+                    try {
+
+                        outputFile = new FileOutputStream(PATH);
+                        bufferedOutput = new BufferedOutputStream(outputFile);
+                        objectOutput = new ObjectOutputStream(bufferedOutput);
+
+                        objectOutput.writeObject(f18);
+
+                    } catch (FileNotFoundException e) {
+                        System.out.println("ERROR: La ruta marcada no existe");
+                    } catch (IOException e) {
+                        System.out.println("ERROR: Se ha producido un error en la E/S");
+                    } finally {
+                        try  {
+                            if (objectOutput != null) objectOutput.close();
+                            if (bufferedOutput != null) objectOutput.close();
+                            if (outputFile != null) objectOutput.close();
+                        } catch (IOException e) {
+                            System.out.println("ERROR: No se ha podido cerrar el archivo");
+                        }
+                    }
+
                     System.out.println("Saliendo...");
                     salir = true;
+                    break;
             }
-
         }
-
     }
-
-
 }
