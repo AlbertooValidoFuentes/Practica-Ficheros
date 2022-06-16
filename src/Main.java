@@ -31,6 +31,8 @@ public class Main {
 
                     Plane f18 = new Plane(nivelCombustible, apodoPiloto, numeroEscuadron);
 
+                    f18.setInitialized(true);
+
                     System.out.println(f18);
                     break;
                 case "2":
