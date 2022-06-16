@@ -20,6 +20,18 @@ public class Main {
 
             switch (opcion) {
                 case "1":
+                    System.out.println("Ingrese el nivel de combustible: ");
+                    int nivelCombustible = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println("Ingrese el apodo del piloto");
+                    String apodoPiloto = scan.nextLine();
+
+                    System.out.println("Ingrese el numero de escuadron: ");
+                    String numeroEscuadron = scan.nextLine();
+
+                    Plane f18 = new Plane(nivelCombustible, apodoPiloto, numeroEscuadron);
+
+                    System.out.println(f18);
                     break;
                 case "2":
                     break;
