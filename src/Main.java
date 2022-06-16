@@ -52,7 +52,12 @@ public class Main {
                         System.out.println("F18 no inicializado");
                     }
                 case "4":
-                    break;
+                    if (f18.getInitialized()) {
+                        f18.ejectionSystem();
+                        System.out.println(f18);
+                    } else {
+                        System.out.println("F18 no inicializado");
+                    }
                 case "5":
                     break;
                 case "Q":
