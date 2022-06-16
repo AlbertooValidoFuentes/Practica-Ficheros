@@ -10,6 +10,8 @@ public class Plane {
 
     private boolean seatOccupation;
 
+    private boolean initialized;
+
     public Plane(float fuelLevel, String pilotCallSign, String squadNumber) {
         this.fuelLevel = fuelLevel;
         this.pilotCallSign = pilotCallSign;
@@ -34,6 +36,14 @@ public class Plane {
 
     public void setSeatOccupation(boolean pilotSeated) {
         seatOccupation = pilotSeated;
+    }
+
+    public void setInitialized(boolean state) {
+        initialized = state;
+    }
+
+    public boolean getInitialized() {
+        return initialized;
     }
 
     @Override
